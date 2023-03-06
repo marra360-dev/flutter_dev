@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dev/helper/demo_values.dart';
+import 'package:flutter_dev/view/pages/postPage.dart';
 
 class PostCard extends StatelessWidget {
   const PostCard();
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 6 / 3,
-      child: Card(
-        elevation: 2,
-        child: Container(
-          margin: const EdgeInsets.all(4.0),
-          padding: const EdgeInsets.all(4.0),
-          child: Column(
-            children: <Widget>[
-              _Post(),
-              _PostDetails(),
-            ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (BuildContext context) {
+          return PostPage();
+        }));
+      },
+      child: AspectRatio(
+        aspectRatio: 6 / 3,
+        child: Card(
+          elevation: 2,
+          child: Container(
+            margin: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(4.0),
+            child: Column(
+              children: <Widget>[
+                _Post(),
+                _PostDetails(),
+              ],
+            ),
           ),
         ),
       ),
