@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dev/view/widgets/post_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage();
@@ -9,8 +10,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Flying Pigs"),
       ),
-      body: Center(
-        child: Text("Hello world!"),
+      body: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return PostCard();
+        },
       ),
     );
   }
